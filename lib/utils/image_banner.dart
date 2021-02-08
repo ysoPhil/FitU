@@ -1,3 +1,8 @@
+///Written: Phil D.
+///Purpose: Class that generates an
+///         image banner widget to
+///         improve readability
+
 import 'package:flutter/material.dart';
 
 class ImageBanner extends StatelessWidget {

@@ -1,7 +1,21 @@
+///Written: Phil D.
+///Purpose: A class that handles the navigation of pages in the app.
+///Algorithm: Recieves a string and uses a switch statement to route
+///           the next screen page.
+///
+/// INFO: Flutter generates pages ontop of each other similar to a
+///       stack, or a "Deck of cards". When a new page is routed
+///       it is added to the top of the stack. The back arrow on
+///       the app bar removes the top page from the stack onto
+///       the previous
+
 import 'package:flutter/material.dart';
 import 'package:TestProject/main.dart';
+import 'exercise_page.dart';
+import 'nutrition_page.dart';
 
 class RouteGenerator {
+  // ignore: missing_return
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // Getting arguments passed in while calling Navigator.pushNamed
     final args = settings.arguments;
@@ -13,7 +27,7 @@ class RouteGenerator {
         // Validation of correct data type
         if (args is String) {
           return MaterialPageRoute(
-            builder: (_) => SecondPage(
+            builder: (_) => ExercisePage(
               data: args,
             ),
           );
