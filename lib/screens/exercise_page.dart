@@ -1,6 +1,7 @@
+///Authors: Phil D.
+///Purpose: the screen for the exercises to bed displayed
 import 'package:flutter/material.dart';
-
-import '../text_section.dart';
+import '../utils/text_section.dart';
 
 class ExercisePage extends StatelessWidget {
   // This is a String for the sake of an example.

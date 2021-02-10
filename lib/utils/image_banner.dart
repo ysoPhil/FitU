@@ -1,4 +1,4 @@
-///Written: Phil D.
+///Authors: Phil D.
 ///Purpose: Class that generates an
 ///         image banner widget to
 ///         improve readability

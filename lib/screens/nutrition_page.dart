@@ -1,6 +1,7 @@
+///Authors: Phil D.
+///Purpose: The page were the user inputs nutrition
 import 'package:flutter/material.dart';
-
-import '../text_section.dart';
+import '../utils/text_section.dart';
 
 class NutritionPage extends StatelessWidget {
   // This is a String for the sake of an example.

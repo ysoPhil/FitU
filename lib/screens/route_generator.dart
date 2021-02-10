@@ -10,8 +10,8 @@
 ///       the previous
 
 import 'package:flutter/material.dart';
-import 'package:TestProject/main.dart';
 import 'exercise_page.dart';
+import 'home_page.dart';
 import 'nutrition_page.dart';
 
 class RouteGenerator {
