@@ -27,7 +27,7 @@ class Survey {
     this._uid = val;
   }
 
-  calculateBMR() {
+  _calculateBMR() {
     if (this.gender == "Male" || this.gender == "Other") {
       this.bmr = 66.0 +
           (6.23 * this.currentWeight) +
@@ -43,6 +43,7 @@ class Survey {
   }
 
   calculateDailyCalorieIntake() {
+    _calculateBMR();
     if (this.activity == 1) {
       this.calorieIntake = this.bmr * 1.2;
     } else if (this.activity == 2) {
@@ -69,6 +70,7 @@ class Survey {
       'gender': this.gender,
       'activity': this.activity
     });
+    calculateDailyCalorieIntake();
     prefs.setString('surveyData', surveyData);
     print("In Survey: Stored Data; Flag is true");
     this.checkFlag = true;
@@ -109,7 +111,6 @@ class Survey {
       this.currentWeight = extractedSurveyData['currentWeight'];
       this.gender = extractedSurveyData['gender'];
       this.height = extractedSurveyData['height'];
-      this.bmr = calculateBMR();
       calculateDailyCalorieIntake();
       this.checkFlag = true;
       print("In Survey: True flag pulled data");

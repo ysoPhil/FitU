@@ -3,6 +3,7 @@ import 'package:fitness_app/main.dart';
 import 'package:fitness_app/models/survey.dart';
 import 'package:fitness_app/screens/homepage_screen.dart';
 import 'package:fitness_app/screens/loading_screen.dart';
+import 'package:fitness_app/screens/nutrition_screen.dart';
 import 'package:fitness_app/screens/questionnaire_screen.dart';
 import 'package:fitness_app/screens/scheduler_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class Wrapper extends StatelessWidget {
         return SchedulerScreen(survey);
       }
       if (nextPage == "Nutrition") {
-        //TODO: Add calorie Counter;
+        return NutritionScreen(survey);
       }
     }
     if (survey.checkFlag == false) {

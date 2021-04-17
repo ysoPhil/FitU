@@ -35,7 +35,12 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                   ' counter you must complete this questionnaire. ' +
                   'we will regularly request you to resubmitt'),
               TextFormField(
-                //Name
+                //Weight
+                onChanged: (val) {
+                  setState(() {
+                    widget.survey.currentWeight = double.parse(val);
+                  });
+                },
                 decoration: const InputDecoration(
                   icon: Icon(Icons.linear_scale),
                   hintText: 'Current Weight',
@@ -58,7 +63,12 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                 height: 5,
               ),
               TextFormField(
-                //Name
+                //Age
+                onChanged: (val) {
+                  setState(() {
+                    widget.survey.age = int.parse(val);
+                  });
+                },
                 decoration: const InputDecoration(
                   icon: Icon(Icons.timer),
                   hintText: 'Current Age',
@@ -81,6 +91,12 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                 height: 5,
               ),
               TextFormField(
+                //height
+                onChanged: (val) {
+                  setState(() {
+                    widget.survey.height = double.parse(val);
+                  });
+                },
                 decoration: const InputDecoration(
                   icon: Icon(Icons.height),
                   hintText: 'Height in Inches',
