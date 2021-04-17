@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "78291778127",
+    "firebase_url": "https://fituapp-991a4-default-rtdb.firebaseio.com",
+    "project_id": "fituapp-991a4",
+    "storage_bucket": "fituapp-991a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78291778127:android:9405bbcd363c450503883a",
+        "android_client_info": {
+          "package_name": "com.example.FitU_App"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78291778127-rdp41aia4l32m8vk6d7a0addl4kgd9in.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIvMvQOJ7bDn0Se_JlNEEGi1HBc5LVLCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "78291778127-rdp41aia4l32m8vk6d7a0addl4kgd9in.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "78291778127-6tro6rk3ijnpdeotp3gskdv5r7vcsgcs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.TestProject"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78291778127:android:f5dbe13e5f69d43d03883a",
+        "android_client_info": {
+          "package_name": "com.example.fitness_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78291778127-rdp41aia4l32m8vk6d7a0addl4kgd9in.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIvMvQOJ7bDn0Se_JlNEEGi1HBc5LVLCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "78291778127-rdp41aia4l32m8vk6d7a0addl4kgd9in.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "78291778127-6tro6rk3ijnpdeotp3gskdv5r7vcsgcs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.TestProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
