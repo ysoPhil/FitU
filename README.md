@@ -1,6 +1,6 @@
-# fitness_app
+# FitU
 
-A new Flutter project.
+WIP of Senior Project
 
 ## Getting Started
 
