@@ -8,16 +8,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/http_exception.dart';
 
 class Survey {
-  String _uid;
-  String gender;
-  double height;
-  double currentWeight;
-  int age;
-  int activity;
+  String _uid = '';
+  String gender = '';
+  double height = 0;
+  double currentWeight = 0;
+  int age = 0;
+  int activity = 0;
   //double bmr;
   //double calorieIntake;
   bool checkFlag = false;
-  bool dailyFlag;
 
   String get uid {
     return uid;

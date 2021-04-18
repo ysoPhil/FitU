@@ -7,8 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 class Scheduler {
   final Random _random = new Random();
   final Survey survey;
-  String currentDate;
-  String savedDate;
+  String currentDate = '';
+  String savedDate = '';
 
   List<Video> exercises = [];
 

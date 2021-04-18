@@ -5,11 +5,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class NutritionCalculator {
   final Survey survey;
-  double calorieIntake;
+  double calorieIntake = 0;
   double currentCalorie = 0;
-  String currentDate;
-  String savedDate;
-  double bmr;
+  String currentDate = '';
+  String savedDate = '';
+  double bmr = 0.0;
 
   NutritionCalculator(this.survey);
 
