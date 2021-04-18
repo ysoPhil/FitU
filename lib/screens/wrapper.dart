@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:fitness_app/main.dart';
+import 'package:fitness_app/models/nutrition_calculator.dart';
 import 'package:fitness_app/models/survey.dart';
 import 'package:fitness_app/screens/homepage_screen.dart';
 import 'package:fitness_app/screens/loading_screen.dart';
@@ -19,13 +20,14 @@ class Wrapper extends StatelessWidget {
   Wrapper(this.nextPage, this.survey);
   @override
   Widget build(BuildContext context) {
-    survey.initSurvey();
     if (survey.checkFlag == true) {
       if (nextPage == "Scheduler") {
         return SchedulerScreen(survey);
       }
       if (nextPage == "Nutrition") {
-        return NutritionScreen(survey);
+        NutritionCalculator calculator = NutritionCalculator(survey);
+        calculator.initCalculator();
+        return NutritionScreen(calculator);
       }
     }
     if (survey.checkFlag == false) {

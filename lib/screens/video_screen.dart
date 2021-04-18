@@ -37,7 +37,6 @@ class _VideoScreenState extends State<VideoScreen> {
               ),
             ),
             body: Container(
-                color: Colors.amber[50],
                 margin: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
                 child: Column(
                   children: [

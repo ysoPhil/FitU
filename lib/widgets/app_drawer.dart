@@ -37,9 +37,10 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.home),
             title: Text('Home'),
             onTap: () {
-              Navigator.of(context).pushReplacementNamed(
-                HomePageScreen.routeName,
-              );
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HomePageScreen(survey)));
             },
           ),
           Divider(
@@ -53,7 +54,6 @@ class AppDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => Wrapper('Scheduler', survey)));
-              //TODO: return Scheduler
             },
           ),
           Divider(
