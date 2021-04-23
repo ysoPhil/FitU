@@ -33,7 +33,8 @@ class _VideoScreenState extends State<VideoScreen> {
             appBar: AppBar(
               backgroundColor: Colors.amber[800],
               title: Text(
-                "Demonstration Video", //TODO: Name the exercise
+                ("Demonstration of " +
+                    widget.video.name), //TODO: Name the exercise
               ),
             ),
             body: Container(
@@ -47,9 +48,23 @@ class _VideoScreenState extends State<VideoScreen> {
                     SizedBox(
                       height: 10,
                     ),
-                    player
-                    //TODO: Give credit to video author
-                    //Get the number Reps and Sets
+                    player,
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text('Created by: ' + widget.video.author),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text("This exercise is primarily meant to work out your " +
+                        widget.video.target +
+                        " area." +
+                        "\n We highly suggest that you do not overexert by over training your " +
+                        widget.video.target +
+                        ". You should make sure that your body is ready by doing warm-up exercises, and that" +
+                        " you stretch the" +
+                        widget.video.target +
+                        " region after your workout and cool down."),
                   ],
                 )));
       },

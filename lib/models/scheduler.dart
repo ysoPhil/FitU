@@ -9,6 +9,7 @@ class Scheduler {
   final Survey survey;
   String currentDate = '';
   String savedDate = '';
+  String repSet = '';
 
   List<Video> exercises = [];
 
@@ -43,6 +44,40 @@ class Scheduler {
         return shoulder;
     }
     return chest;
+  }
+
+  setReps() {
+    switch (survey.activity) {
+      case 1:
+        {
+          this.repSet = "Try doing 2 sets of 10 repitions.";
+        }
+        break;
+      case 2:
+        {
+          this.repSet = "Try doing 2 sets of 12 repitions.";
+        }
+        break;
+      case 3:
+        {
+          this.repSet = "Try doing 2 sets of 15 repitions.";
+        }
+        break;
+      case 4:
+        {
+          this.repSet = "Try doing 3 sets of 10 repitions.";
+        }
+        break;
+      case 5:
+        {
+          this.repSet = "Try doing 3 sets of 15 repitions.";
+        }
+        break;
+      default:
+        {
+          this.repSet = "Try doing 2 sets of 10 repitions.";
+        }
+    }
   }
 
   _generateSchedule() {
@@ -102,7 +137,9 @@ class Scheduler {
   }
 
   Future<List<Video>> initScheduler() async {
+    setReps();
     print("IN Scheduler");
+
     DateTime now = DateTime.now();
     currentDate = DateTime(now.year, now.month, now.day).toString();
     final prefs = await SharedPreferences.getInstance();
@@ -136,7 +173,7 @@ class Scheduler {
         for (int i = 0; i < playlist.length; i++) {
           if (playlist[i].id == temp[1]) {
             this.exercises.add(playlist[i]);
-            print("Adding to exercise list");
+            //print("Adding to exercise list");
           }
         }
       });

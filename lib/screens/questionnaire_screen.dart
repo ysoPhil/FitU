@@ -41,6 +41,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                     widget.survey.currentWeight = double.parse(val);
                   });
                 },
+                keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
                   icon: Icon(Icons.linear_scale),
                   hintText: 'Current Weight',
@@ -69,6 +70,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                     widget.survey.age = int.parse(val);
                   });
                 },
+                keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
                   icon: Icon(Icons.timer),
                   hintText: 'Current Age',
@@ -97,6 +99,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                     widget.survey.height = double.parse(val);
                   });
                 },
+                keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
                   icon: Icon(Icons.height),
                   hintText: 'Height in Inches',

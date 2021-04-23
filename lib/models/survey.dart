@@ -13,7 +13,7 @@ class Survey {
   double height = 0;
   double currentWeight = 0;
   int age = 0;
-  int activity = 0;
+  int activity = 1;
   //double bmr;
   //double calorieIntake;
   bool checkFlag = false;

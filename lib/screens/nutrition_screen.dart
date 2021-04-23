@@ -15,6 +15,7 @@ class NutritionScreen extends StatefulWidget {
 
 class _NutritionScreenState extends State<NutritionScreen> {
   final _formKey = GlobalKey<FormState>();
+  String text = '';
   TextEditingController num1controller = new TextEditingController();
   TextEditingController breakfastController = new TextEditingController();
   TextEditingController lunchController = new TextEditingController();
@@ -37,68 +38,66 @@ class _NutritionScreenState extends State<NutritionScreen> {
         ),
         drawer: AppDrawer(widget.calculator.survey),
         backgroundColor: Colors.amber[100],
-        body: Form(
-          key: _formKey,
-          child: Center(
-            // Center is a layout widget. It takes a single child and positions it
-            // in the middle of the parent.
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Text(
-                  'Target Calories for today: ${widget.calculator.calorieIntake.round()}',
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  controller: breakfastController,
-                  decoration: const InputDecoration(
-                    icon: Icon(Icons.breakfast_dining),
-                    hintText: 'Calories consumed for breakfast, 0 if none.',
+        body: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+          child: Form(
+            key: _formKey,
+            child: Center(
+              // Center is a layout widget. It takes a single child and positions it
+              // in the middle of the parent.
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Target Calories for today: ${widget.calculator.calorieIntake.round()}',
+                    style: Theme.of(context).textTheme.headline5,
                   ),
-                ),
-                Text('Calories Consumed For Lunch:',
-                    style: TextStyle(fontSize: 10)),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  controller: lunchController,
-                  decoration: const InputDecoration(
-                    icon: Icon(Icons.fastfood_sharp),
-                    hintText: 'Calories consumed for Lunch, 0 if none.',
+                  SizedBox(
+                    height: 30,
                   ),
-                ),
-                Text('Enter your lunch', style: TextStyle(fontSize: 10)),
-                TextFormField(
-                  keyboardType: TextInputType.number,
-                  controller: dinnerController,
-                  decoration: const InputDecoration(
-                    icon: Icon(Icons.fastfood_sharp),
-                    hintText: 'Calories consumed for Dinner, 0 if none.',
+                  TextFormField(
+                    keyboardType: TextInputType.number,
+                    controller: breakfastController,
+                    decoration: const InputDecoration(
+                      icon: Icon(Icons.breakfast_dining),
+                      hintText: 'Calories Consumed, 0 if none.',
+                    ),
                   ),
-                ),
-                Text(
-                  ' calories remaining ' +
-                      '${(widget.calculator.calorieIntake - widget.calculator.currentCalorie).round()}',
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    print("In button");
-                    setState(() {
-                      widget.calculator.currentCalorie =
-                          widget.calculator.currentCalorie +
-                              int.parse(breakfastController.text) +
-                              int.parse(lunchController.text) +
-                              int.parse(dinnerController.text);
-                      widget.calculator.storeDailyData();
-                    });
-                  },
-                  child: Text("Calculate"),
-                ),
-              ],
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Text(
+                    ' calories remaining ' +
+                        '${(widget.calculator.calorieIntake - widget.calculator.currentCalorie).round()}',
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      print("In button");
+                      setState(() {
+                        widget.calculator.currentCalorie =
+                            widget.calculator.currentCalorie +
+                                int.parse(breakfastController.text);
+                        widget.calculator.storeDailyData();
+                        if (widget.calculator.currentCalorie <=
+                            widget.calculator.calorieIntake +
+                                100 / widget.calculator.survey.activity) {
+                          text = "Great going! Keep it up!";
+                        } else
+                          text = "You'll get it! Keep trying!";
+                        {}
+                      });
+                    },
+                    child: Text("Calculate"),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(text)
+                ],
+              ),
             ),
           ),
         ));

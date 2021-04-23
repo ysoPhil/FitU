@@ -19,7 +19,7 @@ class _SchedulerScreenState extends State<SchedulerScreen> {
   @override
   Widget build(BuildContext context) {
     Scheduler schedule = Scheduler(widget.survey);
-
+    schedule.setReps();
     return Scaffold(
         backgroundColor: Colors.amber[100],
         appBar: new AppBar(
@@ -34,9 +34,7 @@ class _SchedulerScreenState extends State<SchedulerScreen> {
             child: FutureBuilder(
           future: schedule.initScheduler(),
           builder: (context, AsyncSnapshot<List<Video>> snapshot) {
-            return snapshot.hasData
-                ? SchedulerList(schedule.exercises)
-                : LoadingScreen();
+            return snapshot.hasData ? SchedulerList(schedule) : LoadingScreen();
           },
         )));
   }
